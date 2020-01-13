@@ -12,7 +12,7 @@ public class ProviderSubject {
         
         System.out.println("Предмет");
         String Subject = scanner.nextLine();
-        subject.setSchoolSubject(Subject);
+        subject.setSubjectName(Subject);
         
         System.out.println("кол-во часов");
         int hours = scanner.nextInt();

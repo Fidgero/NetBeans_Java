@@ -4,15 +4,16 @@ package entity;
 import java.io.Serializable;
 
 public class Subject implements Serializable {
-    private String schoolSubject;
+    private String subjectName;
     private int hours;
 
-    public String getSchoolSubject() {
-        return schoolSubject;
+    public String getSubjectName() {
+        return subjectName;
     }
 
-    public void setSchoolSubject(String schoolSubject) {
-        this.schoolSubject = schoolSubject;
+    public void setSubjectName(String subjectName) {
+        this.subjectName
+                = subjectName;
     }
 
     public int getHours() {
@@ -24,6 +25,6 @@ public class Subject implements Serializable {
     }
     
     public String toString() {
-        return "Subject{" +"subject = " +schoolSubject+ ", hours = " +hours+ "}";
+        return "Subject{" +"subjectName = " +subjectName+ ", hours = " +hours+ "}";
     }
 }

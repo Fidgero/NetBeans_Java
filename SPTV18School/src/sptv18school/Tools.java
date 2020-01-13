@@ -11,62 +11,47 @@ import java.util.Scanner;
  */
 public class Tools {
     private Scanner scanner = new Scanner(System.in);
-    
-    public void printTakedOnBooks(List<Journal> journals){
-        int n = 1;
-        for(int i = 0; i < journals.size(); i++){
-            Journal journal = journals.get(i);
-            if(journal.getReturnJournal()== null){
-                System.out.printf("%d. Книгу \"%s\" читает %s %s%n"
-                        ,n
-                        ,journal.getMark()
-                        ,journal.getPeople()
-                        ,journal.getSubject()
-                );
-                n++;
-            }
-        }
-    }
 
     void printListPerson(List<Person> persons) {
         for (int i = 0; i < persons.size(); i++) {
             Person person = persons.get(i);
             System.out.println(i + 1 + ". " + person.toString());
         }
-        System.out.println("Для редактирования книги введите ее номер или 0:");
+        System.out.println("Для редактирования журнала введите ее номер или 0:");
         int indexPerson = scanner.nextInt();
         scanner.nextLine();
-        if(0 != indexBook){
-            Book book = books.get(indexBook-1);
-            book = editBook(book);
-            books.set(indexBook-1, book);
+        if(0 != indexPerson){
+            Person person = persons.get(indexPerson-1);
+            person = editPerson(person);
+            persons.set(indexPerson-1, person);
         }
     }
 
-    private Book editBook(Book book) {
+    private Person editPerson(Person person) {
         System.out.println("Введите правильное значение:");
-        System.out.print("Заголовок: ");
-        System.out.println(book.getTitle());
+        System.out.print("Имя ");
+        System.out.println(person.getFirstName());
         System.out.print("Исправить на: ");
-        String newTitle = scanner.nextLine();
-        System.out.print("Автор: ");
-        System.out.println(book.getAuthor());
+        String newFirstName = scanner.nextLine();
+        System.out.print("Фамилия ");
+        System.out.println(person.getSecondName());
         System.out.print("Исправить на: ");
-        String newAuthor = scanner.nextLine();
-        System.out.print("Год издания: ");
-        System.out.println(book.getPublishedYear());
+        String newSecondName = scanner.nextLine();
+        System.out.print("Статус: ");
+        System.out.println(person.getStatus());
         System.out.print("Исправить на: ");
-        int newPublishedYear = scanner.nextInt();
-        scanner.nextLine();
-        if(!"0".equals(newTitle)){
-           book.setTitle(newTitle); 
+        String newStatus = scanner.nextLine();
+        
+        
+        if(!"0".equals(newFirstName)){
+           person.setFirstName(newFirstName); 
         }
-        if(!"0".equals(newAuthor)){
-           book.setAuthor(newAuthor); 
+        if(!"0".equals(newSecondName)){
+           person.setSecondName(newSecondName); 
         }
-        if(0 != newPublishedYear){
-           book.setPublishedYear(newPublishedYear); 
+        if(!"0".equals(newStatus)){
+           person.setStatus(newStatus); 
         }
-        return book;
+        return person;
     }
 }

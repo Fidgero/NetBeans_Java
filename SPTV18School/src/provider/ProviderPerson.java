@@ -8,16 +8,20 @@ public class ProviderPerson {
     public Person createPerson(){
         Scanner scanner = new Scanner(System.in);
         
-        Person person = new Person();
+        Person persons = new Person();
         
         System.out.println("Имя");
-        String people = scanner.nextLine();
-        person.setPeople(people);
+        String firstName = scanner.nextLine();
+        persons.setFirstName(firstName);
+        
+        System.out.println("Фамилия");
+        String secondName = scanner.nextLine();
+        persons.setSecondName(secondName);
         
         System.out.println("Учитель/Ученик(-ца)");
         String status = scanner.nextLine();
-        person.setStatus(status);
+        persons.setStatus(status);
         
-        return person;
+        return persons;
     }
 }

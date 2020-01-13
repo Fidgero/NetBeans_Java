@@ -8,8 +8,35 @@ public class Journal implements Serializable {
     private Date giveOutJournal;
     private Date returnJournal;
     private String mark;
-    private String people;
-    private String subject;
+    private Person person;
+    private Subject subject;
+
+    public Journal() {
+    }
+
+    public Journal(Date giveOutJournal, Date returnJournal, String mark, Person person, Person secondName, Subject subject) {
+        this.giveOutJournal = giveOutJournal;
+        this.returnJournal = returnJournal;
+        this.mark = mark;
+        this.person = person;
+        this.subject = subject;
+    }
+
+    public Date getGiveOutJournal() {
+        return giveOutJournal;
+    }
+
+    public void setGiveOutJournal(Date giveOutJournal) {
+        this.giveOutJournal = giveOutJournal;
+    }
+
+    public Date getReturnJournal() {
+        return returnJournal;
+    }
+
+    public void setReturnJournal(Date returnJournal) {
+        this.returnJournal = returnJournal;
+    }
 
     public String getMark() {
         return mark;
@@ -19,39 +46,29 @@ public class Journal implements Serializable {
         this.mark = mark;
     }
 
-    public String getPeople() {
-        return people;
+    public Person getPerson() {
+        return person;
     }
 
-    public void setPeople(String people) {
-        this.people = people;
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
-    public String getSubject() {
+    public Subject getSubject() {
         return subject;
     }
 
-    public void setSubject(String subject) {
+    public void setSubject(Subject subject) {
         this.subject = subject;
     }
-    
-    public Date getGiveOutJournla() {
-        return giveOutJournal;
-    }
 
-    public void setGiveOutBook(Date giveOutJournla) {
-        this.giveOutJournal = giveOutJournla;
-    }
-    
-    public Date getReturnJournal() {
-        return returnJournal;
-    }
-
-    public void setReturnJournal(Date returnJournal) {
-        this.returnJournal = returnJournal;
-    }
-    
+    @Override
     public String toString() {
-        return "Jornal{" +"date = " +giveOutJournal+ ", mark = " +mark+ ", people = " +people+ ", subject = " +subject+"}";
+        return "Journal{" + "giveOutJournal=" + giveOutJournal + ", returnJournal=" + returnJournal + ", mark=" + mark
+                + ", person=" + person.getFirstName() 
+                + " " + person.getSecondName()
+                + ", subject=" + subject.getSubjectName() + '}';
     }
+
+    
 }

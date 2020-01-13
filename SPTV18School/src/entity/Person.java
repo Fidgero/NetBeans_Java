@@ -4,15 +4,33 @@ package entity;
 import java.io.Serializable;
 
 public class Person implements Serializable {
-    private String people;
+    private String firstName;
+    private String secondName;
     private String status;
 
-    public String getPeople() {
-        return people;
+    public Person() {
     }
 
-    public void setPeople(String people) {
-        this.people = people;
+    public Person(String firstName, String secondName, String status) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.status = status;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public void setSecondName(String SecondName) {
+        this.secondName = SecondName;
     }
 
     public String getStatus() {
@@ -22,8 +40,11 @@ public class Person implements Serializable {
     public void setStatus(String status) {
         this.status = status;
     }
-    
+
+    @Override
     public String toString() {
-        return "Person{" +"people = " + people +", status = "+ status +"}";
+        return "Person{" + "firstName=" + firstName + ", SecondName=" + secondName + ", status=" + status + '}';
     }
+
+    
 }

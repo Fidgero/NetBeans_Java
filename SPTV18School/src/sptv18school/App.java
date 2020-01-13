@@ -19,11 +19,14 @@ public class App {
     public App() {
         saveToFile = new SaverToFile();
         persons.addAll(saveToFile.loadPerson());
+        subjects.addAll(saveToFile.loadSubject());
+        journals.addAll(saveToFile.loadJournal());
     }
    
     public void run(){
         System.out.println("<=== Это Школа ===>");
         boolean repeat = true;
+        Tools tools = new Tools();
         do {
             System.out.println(" ");
             System.out.println("  Список задач: ");
@@ -34,6 +37,7 @@ public class App {
             System.out.println("4. Показать список людей");
             System.out.println("5. Показать список предметов");
             System.out.println("6. Показать список журналов");
+            System.out.println("7. Изменение данных");
             System.out.println(" Выбери номер задачи: ");
             Scanner scanner = new Scanner(System.in);
             int task = scanner.nextInt();
@@ -95,6 +99,10 @@ public class App {
                     for (int i = 0; i < journals.size(); i++) {
                         System.out.println(i + 1 + ". " + journals.get(i).toString());
                     }
+                    break;
+                case 7:
+                    System.out.println("Список журналов:");
+                    
                     break;
             }
         } while (repeat);
